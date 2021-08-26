@@ -9,21 +9,21 @@ import UIKit
 
 class SplashcreenViewController: UIViewController {
 
+    @IBOutlet weak var lblBandungTimes: UILabel!
+    @IBOutlet weak var lblTodayDate: UILabel!
+    @IBOutlet weak var lblVersion: UILabel!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    private func setupUI() {
+        lblTodayDate.text = getTodayDate()
+        lblVersion.text = getAppVersioning()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.navigationController?.navigationBar.isHidden = true
     }
-    */
 
 }
