@@ -1,0 +1,72 @@
+Gitignore iOS
+# Mac OS X Finder
+.DS_Store
+
+# Private Keys
+*.pem
+
+# Xcode legacy
+*.mode1
+!default.mode1
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspective
+!default.perspective
+*.perspectivev3
+!default.perspectivev3
+*.pbxuser
+!default.pbxuser
+xcuserdata/
+*.xcworkspace
+!default.xcworkspace
+
+# Xcode
+build/
+xcuserdata/
+project.xcworkspace/
+DerivedData/
+
+# build products
+build/
+*.[oa]
+*.ipa
+
+# repositories
+.hg
+.svn
+CVS
+
+# Cocoapods
+Pods/
+# automatic backup files
+*~.nib
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+Podfile.lock
+
+# Carthage
+Carthage/Build
+
+# Code Injection
+iOSInjectionProject/
+
+# fastlane
+fastlane/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.moved-aside
+
+## Obj-C/Swift specific
+*.hmap
+*.dSYM.zip
+*.dSYM
+
