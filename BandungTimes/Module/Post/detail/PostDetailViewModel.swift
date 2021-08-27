@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  PostDetailViewModel.swift
 //  BandungTimes
 //
 //  Created by nabilla on 27/08/21.

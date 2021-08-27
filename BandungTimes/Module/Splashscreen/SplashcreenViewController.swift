@@ -24,6 +24,11 @@ class SplashcreenViewController: UIViewController {
         lblVersion.text = getAppVersioning()
 
         self.navigationController?.navigationBar.isHidden = true
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            let postVc = PostListViewController.instantiateFrom(storyboard: .post)
+            self.navigationController?.pushViewController(postVc, animated: true)
+        }
     }
 
 }

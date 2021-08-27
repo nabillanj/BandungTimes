@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Post: Decodable {
+    var userId, id: Int
+    var title, body: String
+}

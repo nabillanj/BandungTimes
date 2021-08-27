@@ -5,7 +5,7 @@ target 'BandungTimes' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for BandungTimes
+  pod 'Alamofire', '~> 5.2'
 
   target 'BandungTimesTests' do
     inherit! :search_paths

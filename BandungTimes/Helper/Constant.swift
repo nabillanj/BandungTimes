@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+let api_url = "https://jsonplaceholder.typicode.com"
