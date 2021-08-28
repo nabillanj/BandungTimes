@@ -34,8 +34,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fH3-pd-jG8">
-                                <rect key="frame" x="0.0" y="230" width="335" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="-8" y="238" width="351" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="0m1-7z-229"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written By: Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-CW-LD9">
                                         <rect key="frame" x="38" y="0.0" width="273" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A12-Dw-p84">
@@ -83,16 +83,16 @@
                             <constraint firstItem="SOu-0U-54p" firstAttribute="top" secondItem="wcY-21-4Wy" secondAttribute="bottom" constant="8" id="5hb-Z0-SQi"/>
                             <constraint firstItem="SOu-0U-54p" firstAttribute="leading" secondItem="wcY-21-4Wy" secondAttribute="leading" id="BhG-yG-Ca1"/>
                             <constraint firstItem="SOu-0U-54p" firstAttribute="trailing" secondItem="wcY-21-4Wy" secondAttribute="trailing" id="Kqv-e4-58K"/>
-                            <constraint firstAttribute="bottom" secondItem="fH3-pd-jG8" secondAttribute="bottom" constant="8" id="LFR-AW-B0c"/>
+                            <constraint firstAttribute="bottom" secondItem="fH3-pd-jG8" secondAttribute="bottom" id="LFR-AW-B0c"/>
                             <constraint firstItem="wcY-21-4Wy" firstAttribute="leading" secondItem="Nrj-1H-kGE" secondAttribute="leading" constant="8" id="MK5-6i-LaN"/>
                             <constraint firstItem="fH3-pd-jG8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cg5-KA-rN0" secondAttribute="bottom" constant="8" id="Ngh-oM-LBA"/>
-                            <constraint firstAttribute="trailing" secondItem="fH3-pd-jG8" secondAttribute="trailing" id="P61-J4-o1v"/>
+                            <constraint firstAttribute="trailing" secondItem="fH3-pd-jG8" secondAttribute="trailing" constant="-8" id="R8r-22-eDp"/>
                             <constraint firstAttribute="trailing" secondItem="wcY-21-4Wy" secondAttribute="trailing" constant="8" id="RaI-8S-hnh"/>
-                            <constraint firstItem="fH3-pd-jG8" firstAttribute="leading" secondItem="Nrj-1H-kGE" secondAttribute="leading" id="SHx-cy-f45"/>
                             <constraint firstItem="cg5-KA-rN0" firstAttribute="leading" secondItem="SOu-0U-54p" secondAttribute="leading" id="Uup-He-VAU"/>
                             <constraint firstItem="cg5-KA-rN0" firstAttribute="trailing" secondItem="SOu-0U-54p" secondAttribute="trailing" id="XLR-DH-aiF"/>
                             <constraint firstItem="cg5-KA-rN0" firstAttribute="top" secondItem="SOu-0U-54p" secondAttribute="bottom" constant="16" id="taf-df-EJS"/>
                             <constraint firstItem="wcY-21-4Wy" firstAttribute="top" secondItem="Nrj-1H-kGE" secondAttribute="top" constant="8" id="wsI-fm-ALs"/>
+                            <constraint firstItem="fH3-pd-jG8" firstAttribute="leading" secondItem="Nrj-1H-kGE" secondAttribute="leading" constant="-8" id="wuv-5f-pV6"/>
                         </constraints>
                     </view>
                 </subviews>

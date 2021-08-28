@@ -11,8 +11,8 @@ class PostListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel = PostListViewModel()
-    var userViewModel = UserViewModel()
+    private var viewModel = PostListViewModel()
+    private var userViewModel = UserViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ class PostListViewController: UIViewController {
             }
         }
 
-
         viewModel.onSuccess = {
             self.tableView.reloadData()
         }
@@ -62,12 +61,15 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postCell = tableView.dequeueReusableCell(withIdentifier: PostListViewCell.identifier) as! PostListViewCell
         let postModel = viewModel.arrayOfPostList[indexPath.row]
-        postCell.bind(post: postModel, user: userViewModel.filterUserById(id: postModel.id))
+        postCell.bind(post: postModel, user: userViewModel.filterUserById(id: postModel.userId))
 
         return postCell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postDetailController = PostDetailViewController.instantiateFrom(storyboard: .post)
+        postDetailController.idPost = viewModel.arrayOfPostList[indexPath.row].id
+        navigationController?.pushViewController(postDetailController, animated: true)
     }
 }
 
