@@ -40,7 +40,7 @@ class PostDetailViewController: UIViewController {
 
     private func setupViewModel() {
         viewModel.onSuccess = { [weak self] in
-            self?.user = self?.userViewModel.filterUserById(id: self?.viewModel.post?.id ?? 0)
+            self?.user = self?.userViewModel.filterUserById(id: self?.viewModel.post?.userId ?? 0)
             self?.tableView.reloadData()
         }
 

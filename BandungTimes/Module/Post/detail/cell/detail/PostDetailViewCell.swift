@@ -26,8 +26,8 @@ class PostDetailViewCell: UITableViewCell {
     func bind(post: Post?, user: User?) {
         lblTitle.text = post?.title
         lblDescription.text = post?.body
-        lblCompany.text = user?.company?.name
-        lblWrittenBy.text = user?.name
+        lblCompany.text = "Company: " + (user?.company?.name ?? "")
+        lblWrittenBy.text = "Written By: " + (user?.name ?? "")
     }
     
 }

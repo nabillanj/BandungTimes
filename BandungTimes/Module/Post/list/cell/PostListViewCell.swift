@@ -29,7 +29,7 @@ class PostListViewCell: UITableViewCell {
     }
 
     private func setUserData(user: User?) {
-        lblUserName.text = "Written By: " + (user?.username ?? "")
+        lblUserName.text = "Written By: " + (user?.name ?? "")
         lblCompany.text = "Company: " + (user?.company?.name ?? "")
     }
     
