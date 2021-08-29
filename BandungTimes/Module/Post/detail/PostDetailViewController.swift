@@ -26,6 +26,7 @@ class PostDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavbar(type: .backNavbar)
         setupTableview()
         setupViewModel()
     }
@@ -36,6 +37,7 @@ class PostDetailViewController: UIViewController {
         tableView.register(CommentViewCell.nib, forCellReuseIdentifier: CommentViewCell.identifier)
         tableView.register(PostListViewCell.nib, forCellReuseIdentifier: PostListViewCell.identifier)
         tableView.register(PostDetailHeader.nib, forHeaderFooterViewReuseIdentifier: PostDetailHeader.identifier)
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
     }
 
     private func setupViewModel() {

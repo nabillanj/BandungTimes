@@ -27,7 +27,8 @@ class SplashcreenViewController: UIViewController {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let postVc = PostListViewController.instantiateFrom(storyboard: .post)
-            self.navigationController?.pushViewController(postVc, animated: true)
+            let navigationController = UINavigationController(rootViewController: postVc)
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
         }
     }
 

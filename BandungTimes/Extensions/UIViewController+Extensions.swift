@@ -31,8 +31,6 @@ extension UIViewController {
         return storyboard.viewController(viewController: self)
     }
 
-
-
     /// Function to showing alert
     /// can be customized to automatically dismiss or need 1 action
     /// - Parameters:
@@ -58,5 +56,52 @@ extension UIViewController {
             alertController.addAction(action)
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+
+    // MARK: - Navigation
+
+    /// Set Custom Navigation Bar
+    /// - Parameter type: type of Navigation bar, with back button or main title
+    func setNavbar(type: NavbarType) {
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationItem.titleView?.isHidden = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.isNavigationBarHidden = false
+
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        self.navigationItem.titleView = UIView()
+
+        let backButton: UIButton = setCustomButton(image: UIImage(named: "back-arrow"), width: 20, height: 20, sender: #selector(self.onBackAction))
+        let homeButton = setCustomButton(image: UIImage(named: "home"), width: 25, height: 25, sender: #selector(self.onHomeAction))
+
+        if type == .mainNavbar {
+            titleLabel.text = "BandungTimes"
+            self.navigationItem.titleView = titleLabel
+        } else {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: homeButton)
+        }
+    }
+
+    private func setCustomButton(image: UIImage?, width: CGFloat, height: CGFloat, sender: Any) -> UIButton {
+        let customButton: UIButton = UIButton()
+        customButton.addTarget(self, action: sender as! Selector, for: UIControl.Event.touchUpInside)
+        customButton.setImage(image, for: .normal)
+        customButton.translatesAutoresizingMaskIntoConstraints = true
+        customButton.widthAnchor.constraint(equalToConstant: width).isActive = true
+        customButton.heightAnchor.constraint(equalToConstant: height).isActive = true
+
+        return customButton
+    }
+
+    @objc private func onBackAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc private func onHomeAction() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

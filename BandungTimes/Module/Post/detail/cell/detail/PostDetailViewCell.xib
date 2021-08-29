@@ -25,25 +25,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="419" height="306"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-Hj-QUT">
-                                        <rect key="frame" x="16" y="8" width="387" height="28"/>
+                                        <rect key="frame" x="16" y="16" width="387" height="28"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82i-Te-Yq5">
-                                        <rect key="frame" x="16" y="240.5" width="387" height="20.5"/>
+                                        <rect key="frame" x="16" y="248.5" width="387" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-image" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-ts-Mmf">
-                                        <rect key="frame" x="16" y="52" width="387" height="150"/>
+                                        <rect key="frame" x="16" y="60" width="387" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="Y61-ng-TpX"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post: Lorem ipsum dolor sit amet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-9F-HfP">
-                                        <rect key="frame" x="16" y="210" width="387" height="14.5"/>
+                                        <rect key="frame" x="16" y="218" width="387" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="82i-Te-Yq5" secondAttribute="bottom" constant="8" id="4z7-zg-gVI"/>
                                     <constraint firstItem="82i-Te-Yq5" firstAttribute="top" secondItem="Grg-9F-HfP" secondAttribute="bottom" constant="16" id="Aa1-mL-04X"/>
                                     <constraint firstItem="QFL-ts-Mmf" firstAttribute="trailing" secondItem="BUz-Hj-QUT" secondAttribute="trailing" id="DFP-Qc-sHF"/>
-                                    <constraint firstItem="BUz-Hj-QUT" firstAttribute="top" secondItem="ZrU-jn-HVH" secondAttribute="top" constant="8" id="DI7-zJ-ilz"/>
+                                    <constraint firstItem="BUz-Hj-QUT" firstAttribute="top" secondItem="ZrU-jn-HVH" secondAttribute="top" constant="16" id="DI7-zJ-ilz"/>
                                     <constraint firstItem="Grg-9F-HfP" firstAttribute="leading" secondItem="QFL-ts-Mmf" secondAttribute="leading" id="KbN-tE-aMs"/>
                                     <constraint firstAttribute="trailing" secondItem="BUz-Hj-QUT" secondAttribute="trailing" constant="16" id="Ktw-4n-EhH"/>
                                     <constraint firstItem="QFL-ts-Mmf" firstAttribute="leading" secondItem="BUz-Hj-QUT" secondAttribute="leading" id="Mtm-s8-ZmQ"/>

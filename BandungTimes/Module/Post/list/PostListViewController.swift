@@ -23,12 +23,8 @@ class PostListViewController: UIViewController {
         self.title = "Bandung Times"
         setupViewModel()
 
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        }
-
+        setNavbar(type: .mainNavbar)
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.hidesBackButton = true
         tableView.tableFooterView = UIView()
         tableView.register(PostListViewCell.nib, forCellReuseIdentifier: PostListViewCell.identifier)
         setupViewModel()

@@ -35,6 +35,7 @@
 		AB856F2126DA8C6F005875A8 /* PostDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB856F1F26DA8C6F005875A8 /* PostDetailViewCell.xib */; };
 		AB856F2426DA8F1C005875A8 /* PostDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F2326DA8F1C005875A8 /* PostDetailHeader.swift */; };
 		AB856F2626DA8F28005875A8 /* PostDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB856F2526DA8F28005875A8 /* PostDetailHeader.xib */; };
+		AB856F2926DAA46E005875A8 /* CustomNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F2826DAA46E005875A8 /* CustomNavbar.swift */; };
 		ABE3F99D26D74F5E0041940D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F99C26D74F5E0041940D /* AppDelegate.swift */; };
 		ABE3F9A126D74F5E0041940D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F9A026D74F5E0041940D /* ViewController.swift */; };
 		ABE3F9A426D74F5E0041940D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE3F9A226D74F5E0041940D /* Main.storyboard */; };
@@ -97,6 +98,7 @@
 		AB856F1F26DA8C6F005875A8 /* PostDetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailViewCell.xib; sourceTree = "<group>"; };
 		AB856F2326DA8F1C005875A8 /* PostDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailHeader.swift; sourceTree = "<group>"; };
 		AB856F2526DA8F28005875A8 /* PostDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailHeader.xib; sourceTree = "<group>"; };
+		AB856F2826DAA46E005875A8 /* CustomNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavbar.swift; sourceTree = "<group>"; };
 		ABE3F99926D74F5E0041940D /* BandungTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandungTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE3F99C26D74F5E0041940D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE3F9A026D74F5E0041940D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		AB856EF126D7D2AD005875A8 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AB856F2726DAA446005875A8 /* Navbar */,
 				AB856EF226D7D2CE005875A8 /* Storyboard.swift */,
 				AB856EF626D80C02005875A8 /* Constant.swift */,
 			);
@@ -316,6 +319,14 @@
 				AB856F2526DA8F28005875A8 /* PostDetailHeader.xib */,
 			);
 			path = header;
+			sourceTree = "<group>";
+		};
+		AB856F2726DAA446005875A8 /* Navbar */ = {
+			isa = PBXGroup;
+			children = (
+				AB856F2826DAA46E005875A8 /* CustomNavbar.swift */,
+			);
+			path = Navbar;
 			sourceTree = "<group>";
 		};
 		ABE3F99026D74F5E0041940D = {
@@ -705,6 +716,7 @@
 				ABE3F9D826D7BCDE0041940D /* Bundle+Extensions.swift in Sources */,
 				AB856F0F26D81D67005875A8 /* UserGeo.swift in Sources */,
 				AB856EF726D80C03005875A8 /* Constant.swift in Sources */,
+				AB856F2926DAA46E005875A8 /* CustomNavbar.swift in Sources */,
 				AB856EFC26D80EDB005875A8 /* PostApi.swift in Sources */,
 				AB856F0B26D81D1A005875A8 /* UserAddress.swift in Sources */,
 				AB856F1B26DA7FCF005875A8 /* Comment.swift in Sources */,
