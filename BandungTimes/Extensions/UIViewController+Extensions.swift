@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum NavbarType {
+    case mainNavbar
+    case backNavbar
+}
+
 extension UIViewController {
 
     /// Get Today Date
@@ -103,5 +108,16 @@ extension UIViewController {
 
     @objc private func onHomeAction() {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension UIViewController: UIScrollViewDelegate {
+    public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+       if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+          navigationController?.setNavigationBarHidden(true, animated: true)
+
+       } else {
+          navigationController?.setNavigationBarHidden(false, animated: true)
+       }
     }
 }
