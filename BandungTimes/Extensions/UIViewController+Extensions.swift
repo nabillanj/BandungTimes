@@ -82,10 +82,10 @@ extension UIViewController {
         let backButton: UIButton = setCustomButton(image: UIImage(named: "back-arrow"), width: 20, height: 20, sender: #selector(self.onBackAction))
         let homeButton = setCustomButton(image: UIImage(named: "home"), width: 25, height: 25, sender: #selector(self.onHomeAction))
 
-        if type == .mainNavbar {
-            titleLabel.text = "BandungTimes"
-            self.navigationItem.titleView = titleLabel
-        } else {
+        titleLabel.text = "BandungTimes"
+        self.navigationItem.titleView = titleLabel
+        
+        if type == .backNavbar {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: homeButton)
         }
