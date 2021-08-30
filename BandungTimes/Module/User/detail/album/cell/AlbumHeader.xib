@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumHeader" id="U6b-Vx-4bR" customClass="AlbumHeader" customModule="BandungTimes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rzx-TY-i1x">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8n-qa-eRQ">
+                            <rect key="frame" x="0.0" y="0.0" width="5" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.2901960784" blue="0.67450980390000004" alpha="0.70999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="5" id="gkG-hg-yDw"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4b-JM-OeX">
+                            <rect key="frame" x="13" y="15.5" width="299" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="o4b-JM-OeX" firstAttribute="leading" secondItem="Z8n-qa-eRQ" secondAttribute="trailing" constant="8" id="2oU-je-CLR"/>
+                        <constraint firstItem="Z8n-qa-eRQ" firstAttribute="leading" secondItem="Rzx-TY-i1x" secondAttribute="leading" id="FnT-L4-azT"/>
+                        <constraint firstItem="o4b-JM-OeX" firstAttribute="centerY" secondItem="Rzx-TY-i1x" secondAttribute="centerY" id="ZSy-EE-1fw"/>
+                        <constraint firstAttribute="height" constant="50" id="aFz-21-3mx"/>
+                        <constraint firstAttribute="bottom" secondItem="Z8n-qa-eRQ" secondAttribute="bottom" id="gVZ-dG-LIb"/>
+                        <constraint firstItem="Z8n-qa-eRQ" firstAttribute="top" secondItem="Rzx-TY-i1x" secondAttribute="top" id="smP-9V-ojg"/>
+                        <constraint firstAttribute="trailing" secondItem="o4b-JM-OeX" secondAttribute="trailing" constant="8" id="u2b-ZI-glJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="Rzx-TY-i1x" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="5eu-zr-cHI"/>
+                <constraint firstItem="Rzx-TY-i1x" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="g7Y-fR-i22"/>
+                <constraint firstItem="Rzx-TY-i1x" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="jlX-Nz-kur"/>
+                <constraint firstAttribute="trailing" secondItem="Rzx-TY-i1x" secondAttribute="trailing" id="vj2-gR-Z4K"/>
+            </constraints>
+            <connections>
+                <outlet property="lblTitleAlbum" destination="o4b-JM-OeX" id="ggM-HN-DcU"/>
+            </connections>
+            <point key="canvasLocation" x="94" y="73"/>
+        </collectionReusableView>
+    </objects>
+</document>

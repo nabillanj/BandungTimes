@@ -101,6 +101,9 @@
                                                 <state key="normal" title="Visit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickVisitUser:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Be-pG-wyj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

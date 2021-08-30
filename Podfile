@@ -6,7 +6,8 @@ target 'BandungTimes' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
-
+  pod 'AlamofireImage'
+  
   target 'BandungTimesTests' do
     inherit! :search_paths
     # Pods for testing

@@ -60,11 +60,6 @@ class PostDetailViewController: UIViewController {
             }
         }
     }
-
-    // MARK: - Actions
-    @IBAction func onClickVisitToWriter(_ sender: Any) {
-        showAlertMessage(title: "Hola")
-    }
 }
 
 extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
@@ -88,6 +83,7 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
         switch PostDetailType(rawValue: indexPath.section) {
         case .detail:
             let detailCell = tableView.dequeueReusableCell(withIdentifier: PostDetailViewCell.identifier) as! PostDetailViewCell
+            detailCell.delegate = self
             detailCell.bind(post: viewModel.post, user: user)
             return detailCell
         case .relatedPost:
@@ -125,5 +121,13 @@ extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             break
         }
+    }
+}
+
+extension PostDetailViewController: PostDetailDelegate {
+    func onClickVisit() {
+        let userVc = UserDetailViewController.instantiateFrom(storyboard: .user)
+        userVc.user = user
+        self.navigationController?.pushViewController(userVc, animated: true)
     }
 }

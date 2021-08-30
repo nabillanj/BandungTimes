@@ -12,6 +12,8 @@ class UserViewModel {
     var onShowError: ((_ error: String) -> Void)?
 
     var arrayOfUser: [User] = []
+    var arrayOfAlbum: [Album] = []
+    var arrayOfPhotos: [Photos] = []
 
     private var userApi: UserApi?
 
@@ -26,6 +28,28 @@ class UserViewModel {
                 completionHandler(nil)
             } else {
                 completionHandler(error?.localizedDescription ?? "")
+            }
+        }
+    }
+
+    func getAlbumList(userId: Int) {
+        userApi?.getAlbumList(userId: userId) { (listAlbum, error) in
+            if error == nil {
+                listAlbum?.forEach { self.arrayOfAlbum.append($0) }
+                self.onSuccess?()
+            } else {
+                self.onShowError?(error?.localizedDescription ?? "")
+            }
+        }
+    }
+
+    func getPhotosFromAlbum(albumId: Int) {
+        userApi?.getPhotosFromAlbum(albumId: albumId) { (listPhotos, error) in
+            if error == nil {
+                listPhotos?.forEach { self.arrayOfPhotos.append($0) }
+                self.onSuccess?()
+            } else {
+                self.onShowError?(error?.localizedDescription ?? "")
             }
         }
     }

@@ -12,7 +12,6 @@ enum Storyboard: String {
     case main
     case post
     case user
-    case photo
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue.capitalized, bundle: nil)

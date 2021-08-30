@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PostDetailDelegate {
+    func onClickVisit()
+}
+
 class PostDetailViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
@@ -16,6 +20,8 @@ class PostDetailViewCell: UITableViewCell {
     @IBOutlet weak var lblCompany: UILabel!
     @IBOutlet weak var btnVisit: UIButton!
     @IBOutlet weak var imgWriter: UIImageView!
+
+    var delegate: PostDetailDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,4 +36,7 @@ class PostDetailViewCell: UITableViewCell {
         lblWrittenBy.text = "Written By: " + (user?.name ?? "")
     }
     
+    @IBAction func onClickVisitUser(_ sender: Any) {
+        delegate?.onClickVisit()
+    }
 }
