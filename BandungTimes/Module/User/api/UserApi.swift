@@ -58,7 +58,7 @@ extension UserApi {
             case .album(let userId):
                 return "/albums?userId=" + userId
             case .photos(let albumId):
-                return "/photos?albumsId=" + albumId
+                return "/photos?albumId=" + albumId
             }
         }
     }

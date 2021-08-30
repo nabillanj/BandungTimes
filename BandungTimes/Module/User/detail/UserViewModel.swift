@@ -7,13 +7,20 @@
 
 import Foundation
 
+struct UserPhotosAlbum {
+    var album: Album?
+    var photos: [Photos]?
+}
+
 class UserViewModel {
     var onSuccess: (() -> Void)?
     var onShowError: ((_ error: String) -> Void)?
 
     var arrayOfUser: [User] = []
-    var arrayOfAlbum: [Album] = []
-    var arrayOfPhotos: [Photos] = []
+    private var arrayOfAlbum: [Album] = []
+    var arrayOfAlbumPhotos: [UserPhotosAlbum] = []
+
+    var arrayOfPhotosAlbum: [UserPhotosAlbum] = []
 
     private var userApi: UserApi?
 
@@ -35,22 +42,34 @@ class UserViewModel {
     func getAlbumList(userId: Int) {
         userApi?.getAlbumList(userId: userId) { (listAlbum, error) in
             if error == nil {
-                listAlbum?.forEach { self.arrayOfAlbum.append($0) }
-                self.onSuccess?()
+
+                listAlbum?.forEach {
+                    self.arrayOfAlbum.append($0)
+                }
+                self.getPhotosFromAlbum()
             } else {
                 self.onShowError?(error?.localizedDescription ?? "")
             }
         }
     }
 
-    func getPhotosFromAlbum(albumId: Int) {
-        userApi?.getPhotosFromAlbum(albumId: albumId) { (listPhotos, error) in
-            if error == nil {
-                listPhotos?.forEach { self.arrayOfPhotos.append($0) }
-                self.onSuccess?()
-            } else {
-                self.onShowError?(error?.localizedDescription ?? "")
-            }
+    private func getPhotosFromAlbum() {
+        for album in arrayOfAlbum {
+            userApi?.getPhotosFromAlbum(albumId: album.id ?? 0, completionHandler: { (photos, error) in
+                if !self.arrayOfAlbumPhotos.contains(where: { $0.album?.id == album.id }) {
+                    let userPhotosAlbum = UserPhotosAlbum(album: album, photos: photos)
+                    self.arrayOfAlbumPhotos.append(userPhotosAlbum)
+                }
+
+                if self.arrayOfAlbumPhotos.count == self.arrayOfAlbum.count {
+                    if error == nil {
+                        self.onSuccess?()
+                    } else {
+                        self.onShowError?(error?.localizedDescription ?? "")
+                    }
+                    return
+                }
+            })
         }
     }
 

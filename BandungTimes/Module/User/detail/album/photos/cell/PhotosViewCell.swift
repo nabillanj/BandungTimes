@@ -15,11 +15,20 @@ class PhotosViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        imgPhotos.layer.cornerRadius = 4
     }
 
-    func bind(url: String) {
-        imgPhotos.af_setImage(withURL: URL(string: url)!, placeholderImage: nil)
+    func bind(urlString: String) {
+        let imageCache = AutoPurgingImageCache()
+        if let url = URL(string: urlString) {
+            let urlRequest = URLRequest(url: url)
+            if let cachedAvatarImage = imageCache.image(for: urlRequest, withIdentifier: urlString) {
+                imgPhotos.image = cachedAvatarImage
+            } else {
+                imgPhotos.af.setImage(withURL: url)
+            }
+        } else {
+            imgPhotos = nil
+        }
     }
 
 }

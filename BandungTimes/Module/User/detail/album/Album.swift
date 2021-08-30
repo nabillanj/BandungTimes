@@ -7,7 +7,26 @@
 
 import Foundation
 
-class Album: Decodable {
+class Album: Decodable, Hashable {
+
+    required init?(jsonData: Data?) {
+
+    }
+
+    required init?(jsonString: String) {
+
+    }
+
+    static func == (lhs: Album, rhs: Album) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+        hasher.combine(self.userId)
+        hasher.combine(self.title)
+    }
+
     var id, userId: Int?
     var title: String?
 }

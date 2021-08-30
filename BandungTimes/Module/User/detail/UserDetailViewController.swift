@@ -32,16 +32,7 @@ class UserDetailViewController: UIViewController {
         collectionView.register(AlbumHeader.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumHeader.identifier)
         collectionView.register(PhotosViewCell.nib, forCellWithReuseIdentifier: PhotosViewCell.identifier)
 
-        collectionView.reloadData()
-        let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: collectionView.bounds.width / 3, height: collectionView.bounds.width / 3)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
-        collectionView.collectionViewLayout = layout
-
         viewModel.getAlbumList(userId: user?.id ?? 0)
-        viewModel.getPhotosFromAlbum(albumId: 1)
     }
 
     private func setupViewModel() {
@@ -57,24 +48,25 @@ class UserDetailViewController: UIViewController {
 
 extension UserDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.arrayOfAlbumPhotos.count + 1
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch UserDetailType(rawValue: section) {
         case .detail:
             return 0
         default:
-            return 10
+            return viewModel.arrayOfAlbumPhotos[section - 1].photos?.count ?? 0
         }
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.arrayOfAlbum.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let imageUserCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosViewCell.identifier, for: indexPath) as! PhotosViewCell
 
-        if viewModel.arrayOfPhotos.count > 0 {
-            imageUserCell.bind(url: "https://via.placeholder.com/150/92c952")
+        let photos = viewModel.arrayOfAlbumPhotos[indexPath.section - 1].photos ?? []
+        if photos.count > 0 {
+            imageUserCell.bind(urlString: photos[indexPath.row].thumbnailUrl ?? "")
         }
 
         return imageUserCell
@@ -89,7 +81,8 @@ extension UserDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             return detailView
         default:
             let albumHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumHeader.identifier, for: indexPath) as! AlbumHeader
-            albumHeader.bind(title: viewModel.arrayOfAlbum[indexPath.section - 1].title ?? "")
+            let albumTitle = viewModel.arrayOfAlbumPhotos[indexPath.section - 1].album?.title ?? ""
+            albumHeader.bind(title: albumTitle)
 
             return albumHeader
         }
@@ -105,7 +98,8 @@ extension UserDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / 3, height: collectionView.bounds.width / 3)
+        let widthImage = collectionView.bounds.width / 4
+        return CGSize(width: widthImage, height: widthImage)
     }
 
 }
