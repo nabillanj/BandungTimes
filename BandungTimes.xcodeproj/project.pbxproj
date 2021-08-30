@@ -45,6 +45,8 @@
 		AB856F4426DBBFA5005875A8 /* AlbumHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB856F4226DBBFA5005875A8 /* AlbumHeader.xib */; };
 		AB856F4826DBC359005875A8 /* PhotosViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4626DBC359005875A8 /* PhotosViewCell.swift */; };
 		AB856F4926DBC359005875A8 /* PhotosViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB856F4726DBC359005875A8 /* PhotosViewCell.xib */; };
+		AB856F4C26DCEE21005875A8 /* PhotosPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4B26DCEE20005875A8 /* PhotosPageViewController.swift */; };
+		AB856F4E26DD0C42005875A8 /* PhotosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4D26DD0C42005875A8 /* PhotosDetailViewController.swift */; };
 		ABE3F99D26D74F5E0041940D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F99C26D74F5E0041940D /* AppDelegate.swift */; };
 		ABE3F9A126D74F5E0041940D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F9A026D74F5E0041940D /* ViewController.swift */; };
 		ABE3F9A426D74F5E0041940D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE3F9A226D74F5E0041940D /* Main.storyboard */; };
@@ -117,6 +119,8 @@
 		AB856F4226DBBFA5005875A8 /* AlbumHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumHeader.xib; sourceTree = "<group>"; };
 		AB856F4626DBC359005875A8 /* PhotosViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewCell.swift; sourceTree = "<group>"; };
 		AB856F4726DBC359005875A8 /* PhotosViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosViewCell.xib; sourceTree = "<group>"; };
+		AB856F4B26DCEE20005875A8 /* PhotosPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPageViewController.swift; sourceTree = "<group>"; };
+		AB856F4D26DD0C42005875A8 /* PhotosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailViewController.swift; sourceTree = "<group>"; };
 		ABE3F99926D74F5E0041940D /* BandungTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandungTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE3F99C26D74F5E0041940D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE3F9A026D74F5E0041940D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 		AB856F3A26DBBA62005875A8 /* album */ = {
 			isa = PBXGroup;
 			children = (
+				AB856F4A26DCEE00005875A8 /* page */,
 				AB856F4026DBBF4C005875A8 /* cell */,
 				AB856F3D26DBBA8A005875A8 /* photos */,
 				AB856F3B26DBBA85005875A8 /* Album.swift */,
@@ -393,6 +398,15 @@
 				AB856F4726DBC359005875A8 /* PhotosViewCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		AB856F4A26DCEE00005875A8 /* page */ = {
+			isa = PBXGroup;
+			children = (
+				AB856F4B26DCEE20005875A8 /* PhotosPageViewController.swift */,
+				AB856F4D26DD0C42005875A8 /* PhotosDetailViewController.swift */,
+			);
+			path = page;
 			sourceTree = "<group>";
 		};
 		ABE3F99026D74F5E0041940D = {
@@ -775,6 +789,7 @@
 				AB856F0526D81BBB005875A8 /* PostDetailViewModel.swift in Sources */,
 				AB856F1126D9160D005875A8 /* UserViewModel.swift in Sources */,
 				AB856F4326DBBFA5005875A8 /* AlbumHeader.swift in Sources */,
+				AB856F4E26DD0C42005875A8 /* PhotosDetailViewController.swift in Sources */,
 				AB856EF526D80B31005875A8 /* NetworkManager.swift in Sources */,
 				AB856F4826DBC359005875A8 /* PhotosViewCell.swift in Sources */,
 				AB856F0226D81B4A005875A8 /* PostDetailViewController.swift in Sources */,
@@ -795,6 +810,7 @@
 				AB856EF726D80C03005875A8 /* Constant.swift in Sources */,
 				AB856EFC26D80EDB005875A8 /* PostApi.swift in Sources */,
 				AB856F0B26D81D1A005875A8 /* UserAddress.swift in Sources */,
+				AB856F4C26DCEE21005875A8 /* PhotosPageViewController.swift in Sources */,
 				AB856F1B26DA7FCF005875A8 /* Comment.swift in Sources */,
 				AB856F0926D81D05005875A8 /* User.swift in Sources */,
 				AB856EE126D7C8B3005875A8 /* PostListViewController.swift in Sources */,

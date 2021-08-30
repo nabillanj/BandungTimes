@@ -102,4 +102,16 @@ extension UserDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: widthImage, height: widthImage)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch UserDetailType(rawValue: indexPath.section) {
+        case .album:
+            let detailVc = PhotosPageViewController.instantiateFrom(storyboard: .user)
+            detailVc.currentIndex = indexPath.row
+            detailVc.photos = viewModel.arrayOfAlbumPhotos[indexPath.section - 1].photos ?? []
+            self.navigationController?.pushViewController(detailVc, animated: false)
+        default:
+            break
+        }
+    }
+
 }
