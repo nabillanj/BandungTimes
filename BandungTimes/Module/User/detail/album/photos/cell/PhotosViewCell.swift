@@ -18,17 +18,7 @@ class PhotosViewCell: UICollectionViewCell {
     }
 
     func bind(urlString: String) {
-        let imageCache = AutoPurgingImageCache()
-        if let url = URL(string: urlString) {
-            let urlRequest = URLRequest(url: url)
-            if let cachedAvatarImage = imageCache.image(for: urlRequest, withIdentifier: urlString) {
-                imgPhotos.image = cachedAvatarImage
-            } else {
-                imgPhotos.af.setImage(withURL: url)
-            }
-        } else {
-            imgPhotos = nil
-        }
+        imgPhotos.loadImage(urlString: urlString)
     }
 
 }

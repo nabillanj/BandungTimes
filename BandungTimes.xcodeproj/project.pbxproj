@@ -47,6 +47,7 @@
 		AB856F4926DBC359005875A8 /* PhotosViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB856F4726DBC359005875A8 /* PhotosViewCell.xib */; };
 		AB856F4C26DCEE21005875A8 /* PhotosPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4B26DCEE20005875A8 /* PhotosPageViewController.swift */; };
 		AB856F4E26DD0C42005875A8 /* PhotosDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4D26DD0C42005875A8 /* PhotosDetailViewController.swift */; };
+		AB856F5026DD3F33005875A8 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB856F4F26DD3F33005875A8 /* UIImageView+Extensions.swift */; };
 		ABE3F99D26D74F5E0041940D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F99C26D74F5E0041940D /* AppDelegate.swift */; };
 		ABE3F9A126D74F5E0041940D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE3F9A026D74F5E0041940D /* ViewController.swift */; };
 		ABE3F9A426D74F5E0041940D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE3F9A226D74F5E0041940D /* Main.storyboard */; };
@@ -121,6 +122,7 @@
 		AB856F4726DBC359005875A8 /* PhotosViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosViewCell.xib; sourceTree = "<group>"; };
 		AB856F4B26DCEE20005875A8 /* PhotosPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPageViewController.swift; sourceTree = "<group>"; };
 		AB856F4D26DD0C42005875A8 /* PhotosDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDetailViewController.swift; sourceTree = "<group>"; };
+		AB856F4F26DD3F33005875A8 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		ABE3F99926D74F5E0041940D /* BandungTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BandungTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE3F99C26D74F5E0041940D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE3F9A026D74F5E0041940D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				ABE3F9D226D760670041940D /* UIViewController+Extensions.swift */,
 				ABE3F9D726D7BCDE0041940D /* Bundle+Extensions.swift */,
 				AB856EEF26D7CFB8005875A8 /* View+Extensions.swift */,
+				AB856F4F26DD3F33005875A8 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				AB856EF326D7D2CE005875A8 /* Storyboard.swift in Sources */,
 				ABE3F9A126D74F5E0041940D /* ViewController.swift in Sources */,
 				AB856EEE26D7CAF0005875A8 /* PostListViewModel.swift in Sources */,
+				AB856F5026DD3F33005875A8 /* UIImageView+Extensions.swift in Sources */,
 				ABE3F99D26D74F5E0041940D /* AppDelegate.swift in Sources */,
 				AB856F3326DBA58C005875A8 /* UserDetailViewController.swift in Sources */,
 				AB856EFE26D81B11005875A8 /* UserApi.swift in Sources */,

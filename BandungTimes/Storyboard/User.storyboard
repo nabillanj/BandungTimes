@@ -66,21 +66,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-KF-Vc6">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="-2" maximumZoomScale="5" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-KF-Vc6">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vc9-ns-ZOU">
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="vc9-ns-ZOU">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="aii-6y-wNd"/>
-                                            <constraint firstAttribute="width" priority="250" constant="256" id="n8a-NI-e8P"/>
-                                            <constraint firstAttribute="height" priority="250" constant="256" id="wEE-qf-YLj"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="zkZ-KL-Iix"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="v0U-5r-LP2" appends="YES" id="mJJ-1V-PoE"/>
-                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,6 +81,9 @@
                                     <constraint firstAttribute="bottom" secondItem="vc9-ns-ZOU" secondAttribute="bottom" id="j4V-CW-MaN"/>
                                     <constraint firstItem="vc9-ns-ZOU" firstAttribute="top" secondItem="JD0-KF-Vc6" secondAttribute="top" id="kzS-Bi-2ai"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="XNR-rL-CfO" id="KyV-Vy-IXl"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnJ-CI-5w0">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
@@ -136,16 +130,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNy-GA-E1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="v0U-5r-LP2">
-                    <connections>
-                        <action selector="onDoubleClickImage:" destination="XNR-rL-CfO" id="x95-qd-b6M"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="954" y="-83"/>
         </scene>
     </scenes>
     <resources>
+        <image name="comment" width="256" height="256"/>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
