@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="439" height="331"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-uz-eXM">
-                            <rect key="frame" x="0.0" y="0.0" width="439" height="160"/>
+                            <rect key="frame" x="0.0" y="0.0" width="439" height="180"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-image" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-Ei-8q3">
                                     <rect key="frame" x="189.5" y="8" width="60" height="60"/>
@@ -29,22 +29,28 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="73t-0x-i5k">
-                                    <rect key="frame" x="8" y="76" width="423" height="68"/>
+                                    <rect key="frame" x="8" y="76" width="423" height="88"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqj-6F-Mkz">
-                                            <rect key="frame" x="0.0" y="0.0" width="423" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="423" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssw-lg-WuD">
-                                            <rect key="frame" x="0.0" y="28" width="423" height="16"/>
+                                            <rect key="frame" x="0.0" y="27" width="423" height="15.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-UM-CUK">
+                                            <rect key="frame" x="0.0" y="50.5" width="423" height="15.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w4-gE-gUv">
-                                            <rect key="frame" x="0.0" y="52" width="423" height="16"/>
+                                            <rect key="frame" x="0.0" y="74" width="423" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -60,7 +66,7 @@
                                 <constraint firstAttribute="bottom" secondItem="73t-0x-i5k" secondAttribute="bottom" constant="16" id="LgH-Sa-y5a"/>
                                 <constraint firstItem="yp5-Ei-8q3" firstAttribute="centerX" secondItem="YZO-uz-eXM" secondAttribute="centerX" id="cgc-Uz-F3W"/>
                                 <constraint firstItem="73t-0x-i5k" firstAttribute="leading" secondItem="YZO-uz-eXM" secondAttribute="leading" constant="8" id="u4h-9e-7Fm"/>
-                                <constraint firstAttribute="height" constant="160" id="zLp-A4-UN1"/>
+                                <constraint firstAttribute="height" constant="180" id="zLp-A4-UN1"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -81,6 +87,7 @@
             </constraints>
             <connections>
                 <outlet property="imgUser" destination="yp5-Ei-8q3" id="v77-jA-ib9"/>
+                <outlet property="lblAddress" destination="0Fh-UM-CUK" id="ioU-5D-CeI"/>
                 <outlet property="lblCompany" destination="5w4-gE-gUv" id="Fzb-fn-0ge"/>
                 <outlet property="lblEmail" destination="Ssw-lg-WuD" id="Baw-Sz-YSD"/>
                 <outlet property="lblTitle" destination="Kqj-6F-Mkz" id="kN7-hL-ezp"/>

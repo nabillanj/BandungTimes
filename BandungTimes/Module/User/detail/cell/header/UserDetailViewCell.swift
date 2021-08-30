@@ -13,6 +13,7 @@ class UserDetailViewCell: UICollectionReusableView {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblCompany: UILabel!
     @IBOutlet weak var imgUser: UIImageView!
+    @IBOutlet weak var lblAddress: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,7 @@ class UserDetailViewCell: UICollectionReusableView {
     func bind(user: User?) {
         lblTitle.text = user?.name
         lblCompany.text = "Company : " + (user?.company?.name ?? "")
+        lblAddress.text = "Address : " + (user?.address?.street ?? "")
         lblEmail.text = user?.email
     }
     

@@ -98,7 +98,7 @@ extension UserDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch UserDetailType(rawValue: section) {
         case .detail:
-            return CGSize(width: collectionView.bounds.width, height: 160)
+            return CGSize(width: collectionView.bounds.width, height: 180)
         default:
             return CGSize(width: collectionView.bounds.width, height: 50)
         }
