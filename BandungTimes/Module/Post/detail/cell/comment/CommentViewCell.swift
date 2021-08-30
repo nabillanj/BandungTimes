@@ -19,7 +19,7 @@ class CommentViewCell: UITableViewCell {
     }
 
     func bind(comment: Comment) {
-        lblCommentName.text = comment.name
+        lblCommentName.text = comment.email + " :"
         lblCommentDescription.text = comment.body
     }
 }

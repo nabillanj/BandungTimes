@@ -16,6 +16,9 @@ enum PostDetailType: Int, CaseIterable {
 class PostDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewComment: UIView!
+    @IBOutlet weak var viewSummaryComment: UIView!
+    @IBOutlet weak var lblSummaryComment: UILabel!
 
     private var viewModel = PostDetailViewModel()
     private var userViewModel = UserViewModel()
@@ -27,11 +30,16 @@ class PostDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavbar(type: .backNavbar)
-        setupTableview()
+        setupUI()
         setupViewModel()
     }
 
-    private func setupTableview() {
+    private func setupUI() {
+        viewSummaryComment.layer.cornerRadius = 8
+        viewComment.layer.cornerRadius = 8
+        viewComment.layer.borderWidth = 1
+        viewComment.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
+
         tableView.tableFooterView = UIView()
         tableView.register(PostDetailViewCell.nib, forCellReuseIdentifier: PostDetailViewCell.identifier)
         tableView.register(CommentViewCell.nib, forCellReuseIdentifier: CommentViewCell.identifier)
@@ -43,6 +51,10 @@ class PostDetailViewController: UIViewController {
     private func setupViewModel() {
         viewModel.onSuccess = { [weak self] in
             self?.user = self?.userViewModel.filterUserById(id: self?.viewModel.post?.userId ?? 0)
+
+            let comment = self?.viewModel.numberOfComment ?? 0
+            // if comment more than 99, will showing 99+
+            self?.lblSummaryComment.text = comment > 99 ? "99+" : "\(comment)"
             self?.tableView.reloadData()
         }
 
@@ -60,6 +72,13 @@ class PostDetailViewController: UIViewController {
             }
         }
     }
+
+    // MARK: - Actions
+    @IBAction func onClickToCommentSections(_ sender: Any) {
+        let indexPath = IndexPath(row: 0, section: PostDetailType.comment.rawValue)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+
 }
 
 extension PostDetailViewController: UITableViewDataSource, UITableViewDelegate {

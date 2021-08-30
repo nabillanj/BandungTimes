@@ -46,7 +46,6 @@
         <!--Post Detail View Controller-->
         <scene sceneID="mXn-A3-V6t">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S7n-ba-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PostDetailViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FG-41-Eva" customClass="PostDetailViewController" customModule="BandungTimes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4MJ-0f-kba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -60,6 +59,51 @@
                                     <outlet property="delegate" destination="8FG-41-Eva" id="1ik-at-ZF4"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOQ-A1-o9X">
+                                <rect key="frame" x="348" y="796" width="50" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="dwb-ac-V27">
+                                        <rect key="frame" x="12.5" y="12.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="ONQ-uK-8xU"/>
+                                            <constraint firstAttribute="width" secondItem="dwb-ac-V27" secondAttribute="height" multiplier="1:1" id="tJb-l3-VvX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oj-fg-7ka">
+                                        <rect key="frame" x="29.5" y="4.5" width="18" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um3-nI-POK">
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.2901960784" blue="0.67450980390000004" alpha="0.70999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Um3-nI-POK" firstAttribute="top" secondItem="4Oj-fg-7ka" secondAttribute="top" id="1pk-5Y-VtL"/>
+                                            <constraint firstAttribute="width" constant="18" id="8ai-uY-dIE"/>
+                                            <constraint firstItem="Um3-nI-POK" firstAttribute="leading" secondItem="4Oj-fg-7ka" secondAttribute="leading" id="DAS-Ky-0bb"/>
+                                            <constraint firstAttribute="bottom" secondItem="Um3-nI-POK" secondAttribute="bottom" id="MXT-4B-Djy"/>
+                                            <constraint firstAttribute="trailing" secondItem="Um3-nI-POK" secondAttribute="trailing" id="bFo-Jw-WUH"/>
+                                            <constraint firstAttribute="width" secondItem="4Oj-fg-7ka" secondAttribute="height" multiplier="1:1" id="pLA-ho-ExV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="dwb-ac-V27" firstAttribute="centerX" secondItem="IOQ-A1-o9X" secondAttribute="centerX" id="O4e-2K-BrF"/>
+                                    <constraint firstItem="dwb-ac-V27" firstAttribute="centerY" secondItem="IOQ-A1-o9X" secondAttribute="centerY" id="TK2-iL-lqU"/>
+                                    <constraint firstAttribute="width" secondItem="IOQ-A1-o9X" secondAttribute="height" multiplier="1:1" id="Wcd-AI-FoY"/>
+                                    <constraint firstAttribute="height" constant="50" id="fey-BT-8y9"/>
+                                    <constraint firstItem="4Oj-fg-7ka" firstAttribute="top" secondItem="dwb-ac-V27" secondAttribute="top" constant="-8" id="mlw-pR-YYv"/>
+                                    <constraint firstItem="4Oj-fg-7ka" firstAttribute="leading" secondItem="dwb-ac-V27" secondAttribute="trailing" constant="-8" id="xbu-oZ-5nk"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uxS-65-DTG" appends="YES" id="RGZ-if-D9N"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MhZ-FI-VAn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,17 +112,29 @@
                             <constraint firstItem="AU2-9y-atx" firstAttribute="leading" secondItem="MhZ-FI-VAn" secondAttribute="leading" id="Q0g-bQ-WzY"/>
                             <constraint firstItem="MhZ-FI-VAn" firstAttribute="trailing" secondItem="AU2-9y-atx" secondAttribute="trailing" id="YUF-eU-iG8"/>
                             <constraint firstItem="AU2-9y-atx" firstAttribute="top" secondItem="MhZ-FI-VAn" secondAttribute="top" id="ZKl-PM-uOp"/>
+                            <constraint firstItem="MhZ-FI-VAn" firstAttribute="trailing" secondItem="IOQ-A1-o9X" secondAttribute="trailing" constant="16" id="lAA-gC-PtI"/>
+                            <constraint firstItem="MhZ-FI-VAn" firstAttribute="bottom" secondItem="IOQ-A1-o9X" secondAttribute="bottom" constant="16" id="lsS-w9-tew"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblSummaryComment" destination="Um3-nI-POK" id="s2y-jg-2BH"/>
                         <outlet property="tableView" destination="AU2-9y-atx" id="yiv-eJ-2vQ"/>
+                        <outlet property="viewComment" destination="IOQ-A1-o9X" id="9sW-zs-rWe"/>
+                        <outlet property="viewSummaryComment" destination="4Oj-fg-7ka" id="KBA-xe-Uq7"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7n-ba-pq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uxS-65-DTG">
+                    <connections>
+                        <action selector="onClickToCommentSections:" destination="8FG-41-Eva" id="Hja-qY-eDs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="837.68115942028987" y="57.589285714285708"/>
         </scene>
     </scenes>
     <resources>
+        <image name="comment" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
